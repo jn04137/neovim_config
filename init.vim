@@ -4,12 +4,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'davidhalter/jedi-vim'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'morhetz/gruvbox'
 Plug 'arzg/vim-colors-xcode'
 Plug 'dracula/vim'
 Plug 'ntk148v/vim-horizon'
+Plug 'arcticicestudio/nord-vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
@@ -37,7 +39,7 @@ if (empty($TMUX))
   endif
 endif
 
-colorscheme horizon
+colorscheme nord
 
 set tabstop=4
 set softtabstop=4
@@ -48,4 +50,3 @@ set relativenumber
 let g:user_emmet_leader_key=','
 
 map <C-n> :NERDTreeToggle<CR>
-let g:airline_powerline_fonts=1
