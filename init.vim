@@ -11,6 +11,7 @@ Plug 'arzg/vim-colors-xcode'
 Plug 'dracula/vim'
 Plug 'ntk148v/vim-horizon'
 Plug 'arcticicestudio/nord-vim'
+Plug 'mrjones2014/lighthaus.nvim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
@@ -38,7 +39,9 @@ if (empty($TMUX))
   endif
 endif
 
-colorscheme nord
+colorscheme	lighthaus
+let g:airline_theme='lighthaus'
+let g:airline_powerline_fonts=1
 
 set tabstop=4
 set softtabstop=4
