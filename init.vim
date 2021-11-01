@@ -13,6 +13,7 @@ Plug 'dracula/vim'
 Plug 'ntk148v/vim-horizon'
 Plug 'arcticicestudio/nord-vim'
 Plug 'mrjones2014/lighthaus.nvim'
+Plug 'kaicataldo/material.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
@@ -40,14 +41,17 @@ if (empty($TMUX))
   endif
 endif
 
-colorscheme	lighthaus
-let g:airline_theme='lighthaus'
+let g:material_terminal_italics=1
+let g:material_theme_style='ocean'
+
+colorscheme	material
+let g:airline_theme='material'
 let g:airline_powerline_fonts=1
 
 set tabstop=4
 set softtabstop=4 
-set expandtab
 set shiftwidth=4
+set expandtab
 set smarttab
 
 set number
