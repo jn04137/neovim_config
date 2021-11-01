@@ -5,6 +5,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'davidhalter/jedi-vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'ap/vim-css-color'
 
 Plug 'morhetz/gruvbox'
 Plug 'arzg/vim-colors-xcode'
@@ -44,8 +45,10 @@ let g:airline_theme='lighthaus'
 let g:airline_powerline_fonts=1
 
 set tabstop=4
-set softtabstop=4
+set softtabstop=4 
+set expandtab
 set shiftwidth=4
+set smarttab
 
 set number
 set relativenumber
