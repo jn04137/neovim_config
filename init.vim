@@ -12,12 +12,9 @@ Plug 'arzg/vim-colors-xcode'
 Plug 'dracula/vim'
 Plug 'ntk148v/vim-horizon'
 Plug 'arcticicestudio/nord-vim'
-<<<<<<< HEAD
 Plug 'lighthaus-theme/vim-lighthaus'
-=======
 Plug 'mrjones2014/lighthaus.nvim'
 Plug 'kaicataldo/material.vim'
->>>>>>> b7c801b56692f577ae577ef574600c480fc4e723
 
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
@@ -45,16 +42,12 @@ if (empty($TMUX))
   endif
 endif
 
-<<<<<<< HEAD
-colorscheme lighthaus
-=======
 let g:material_terminal_italics=1
 let g:material_theme_style='ocean'
 
 colorscheme	material
 let g:airline_theme='material'
 let g:airline_powerline_fonts=1
->>>>>>> b7c801b56692f577ae577ef574600c480fc4e723
 
 set tabstop=4
 set softtabstop=4 
