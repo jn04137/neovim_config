@@ -6,6 +6,8 @@ Plug 'preservim/nerdtree'
 Plug 'davidhalter/jedi-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ap/vim-css-color'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
 
 Plug 'morhetz/gruvbox'
 Plug 'arzg/vim-colors-xcode'
@@ -42,12 +44,10 @@ if (empty($TMUX))
   endif
 endif
 
+colorscheme nord
 let g:material_terminal_italics=1
-let g:material_theme_style='ocean'
 
-colorscheme	material
-let g:airline_theme='material'
-let g:airline_powerline_fonts=1
+"let g:airline_powerline_fonts=1
 
 set tabstop=4
 set softtabstop=4 
