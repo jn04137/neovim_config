@@ -19,6 +19,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -49,6 +50,9 @@ set smarttab
 set number
 set relativenumber
 let g:user_emmet_leader_key=','
+let g:indentLine_enabled=0
 
 map <C-n> :NERDTreeToggle<CR>
 nmap <C-P> :FZF<CR>
+
+source $HOME/.config/nvim/plug-config/coc.vim
