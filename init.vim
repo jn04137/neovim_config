@@ -9,14 +9,9 @@ Plug 'ap/vim-css-color'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 
-Plug 'morhetz/gruvbox'
-Plug 'arzg/vim-colors-xcode'
-Plug 'dracula/vim'
-Plug 'ntk148v/vim-horizon'
-Plug 'arcticicestudio/nord-vim'
-Plug 'lighthaus-theme/vim-lighthaus'
-Plug 'mrjones2014/lighthaus.nvim'
 Plug 'kaicataldo/material.vim'
+Plug 'morhetz/gruvbox'
+Plug 'projekt0n/github-nvim-theme'
 
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
@@ -31,26 +26,22 @@ call plug#end()
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-if (empty($TMUX))
-  if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-  if (has("termguicolors"))
-    set termguicolors
-  endif
+if (has("nvim"))
+"For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
 endif
 
-colorscheme nord
+colorscheme github_*
 let g:material_terminal_italics=1
 
-"let g:airline_powerline_fonts=1
-
 set tabstop=2
-set softtabstop=2 
+set softtabstop=2
 set shiftwidth=2
 set expandtab
 set smarttab
