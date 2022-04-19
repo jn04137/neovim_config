@@ -12,15 +12,10 @@ Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'morhetz/gruvbox'
-Plug 'arzg/vim-colors-xcode'
-Plug 'dracula/vim'
-Plug 'ntk148v/vim-horizon'
-Plug 'arcticicestudio/nord-vim'
-Plug 'lighthaus-theme/vim-lighthaus'
-Plug 'mrjones2014/lighthaus.nvim'
 Plug 'kaicataldo/material.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'morhetz/gruvbox'
+Plug 'projekt0n/github-nvim-theme'
 
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
@@ -28,6 +23,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'dense-analysis/ale'
+
+Plug 'ryanoasis/vim-devicons'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -46,13 +44,12 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme material
+colorscheme github_*
+
 let g:material_terminal_italics=1
 
-"let g:airline_powerline_fonts=1
-
 set tabstop=2
-set softtabstop=2 
+set softtabstop=2
 set shiftwidth=2
 set expandtab
 set smarttab
@@ -60,6 +57,9 @@ set smarttab
 set number
 set relativenumber
 let g:user_emmet_leader_key=','
+let g:indentLine_enabled=0
 
 map <C-n> :NERDTreeToggle<CR>
 nmap <C-P> :FZF<CR>
+
+source $HOME/.config/nvim/plug-config/coc.vim
