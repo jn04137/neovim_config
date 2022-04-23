@@ -16,6 +16,8 @@ Plug 'kaicataldo/material.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'arcticicestudio/nord-vim'
+Plug 'tomasr/molokai'
 
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
