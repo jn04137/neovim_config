@@ -12,6 +12,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'kaicataldo/material.vim'
 Plug 'morhetz/gruvbox'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'arcticicestudio/nord-vim'
+Plug 'tomasr/molokai'
 
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
@@ -38,7 +40,7 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme github_*
+colorscheme molokai
 let g:material_terminal_italics=1
 
 set tabstop=2
