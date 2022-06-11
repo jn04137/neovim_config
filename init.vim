@@ -24,7 +24,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'dense-analysis/ale'
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -45,8 +44,6 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
-
-colorscheme github_*
 
 let g:material_terminal_italics=1
 
