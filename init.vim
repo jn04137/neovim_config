@@ -6,8 +6,6 @@ Plug 'preservim/nerdtree'
 Plug 'davidhalter/jedi-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ap/vim-css-color'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -45,6 +43,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+colorscheme material
+
 let g:material_terminal_italics=1
 
 set tabstop=2
@@ -52,6 +52,7 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set smarttab
+set autoindent
 
 set number
 set relativenumber
