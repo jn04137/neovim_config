@@ -16,6 +16,7 @@ Plug 'morhetz/gruvbox'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tomasr/molokai'
+Plug 'lifepillar/vim-solarized8'
 
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
@@ -24,6 +25,7 @@ Plug 'mattn/emmet-vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'ryanoasis/vim-devicons'
+Plug 'pantharshit00/vim-prisma'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
@@ -43,9 +45,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme material
-
-let g:material_terminal_italics=1
+let g:gruvbox_contrast_dark='soft'
+colorscheme gruvbox
 
 set tabstop=2
 set softtabstop=2
@@ -54,6 +55,7 @@ set expandtab
 set smarttab
 set autoindent
 
+let g:airline_powerline_fonts=1
 set number
 set relativenumber
 let g:user_emmet_leader_key=','
