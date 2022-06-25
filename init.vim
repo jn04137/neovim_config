@@ -63,5 +63,8 @@ set relativenumber
 let g:user_emmet_leader_key=','
 let g:indentLine_enabled=0
 
+" Add `:Format` command to format current buffer
+command! -nargs=0 Format :call CocActionAsync('format')
+
 map <C-n> :NERDTreeToggle<CR>
 nmap <C-P> :FZF<CR>
