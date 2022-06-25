@@ -8,7 +8,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'ap/vim-css-color'
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'kaicataldo/material.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -17,6 +16,8 @@ Plug 'projekt0n/github-nvim-theme'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tomasr/molokai'
 Plug 'lifepillar/vim-solarized8'
+Plug 'sainnhe/everforest'
+Plug 'joshdick/onedark.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
@@ -45,8 +46,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-let g:gruvbox_contrast_dark='soft'
-colorscheme gruvbox
+syntax on
+colorscheme onedark
 
 set tabstop=2
 set softtabstop=2
@@ -56,6 +57,7 @@ set smarttab
 set autoindent
 
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
 set number
 set relativenumber
 let g:user_emmet_leader_key=','
@@ -63,5 +65,3 @@ let g:indentLine_enabled=0
 
 map <C-n> :NERDTreeToggle<CR>
 nmap <C-P> :FZF<CR>
-
-source $HOME/.config/nvim/plug-config/coc.vim
