@@ -18,6 +18,7 @@ Plug 'tomasr/molokai'
 Plug 'lifepillar/vim-solarized8'
 Plug 'sainnhe/everforest'
 Plug 'joshdick/onedark.vim'
+Plug 'chriskempson/base16-vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
@@ -47,7 +48,7 @@ if (has("termguicolors"))
 endif
 
 syntax on
-colorscheme onedark
+colorscheme base16-default-dark
 
 set tabstop=2
 set softtabstop=2
@@ -55,6 +56,8 @@ set shiftwidth=2
 set expandtab
 set smarttab
 set autoindent
+set guicursor=i:block
+set guicursor=a:blinkon25-blinkoff200
 
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
