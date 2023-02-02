@@ -10,7 +10,6 @@ Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
 
 Plug 'kaicataldo/material.vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'morhetz/gruvbox'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'arcticicestudio/nord-vim'
@@ -56,6 +55,7 @@ set shiftwidth=2
 set expandtab
 set smarttab
 set autoindent
+set nowrap
 set guicursor=i:block
 set guicursor=a:blinkon25-blinkoff200
 
@@ -69,5 +69,5 @@ let g:indentLine_enabled=0
 " Add `:Format` command to format current buffer
 command! -nargs=0 Format :call CocActionAsync('format')
 
-map <C-n> :NERDTreeToggle<CR>
+nmap <C-n> :silent! NERDTreeToggle<CR>
 nmap <C-P> :FZF<CR>
