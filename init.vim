@@ -47,7 +47,8 @@ if (has("termguicolors"))
 endif
 
 syntax on
-colorscheme base16-default-dark
+set background=light
+colorscheme solarized8
 
 set tabstop=2
 set softtabstop=2
