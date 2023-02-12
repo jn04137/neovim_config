@@ -18,6 +18,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'sainnhe/everforest'
 Plug 'joshdick/onedark.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'ayu-theme/ayu-vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
@@ -58,8 +59,8 @@ endif
 "inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 syntax on
-set background=light
-colorscheme solarized8
+let ayucolor="light"
+colorscheme ayu
 
 set tabstop=2
 set softtabstop=2
