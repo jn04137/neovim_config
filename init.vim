@@ -58,7 +58,8 @@ endif
 "inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 syntax on
-colorscheme material
+set background=light
+colorscheme solarized8
 
 set tabstop=2
 set softtabstop=2
