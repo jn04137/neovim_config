@@ -46,6 +46,7 @@ endif
 if (has("termguicolors"))
   set termguicolors
 endif
+set encoding=UTF-8
 
 " Use tab for trigger completion with characters ahead and navigate
 " NOTE: There's always complete item selected by default, you may want to enable
@@ -59,8 +60,8 @@ endif
 "inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 syntax on
-let ayucolor="light"
-colorscheme ayu
+let g:gruvbox_contrast_dark="hard"
+colorscheme gruvbox
 
 set tabstop=2
 set softtabstop=2
@@ -69,8 +70,6 @@ set expandtab
 set smarttab
 set autoindent
 set nowrap
-set guicursor=i:block
-set guicursor=a:blinkon25-blinkoff200
 
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
