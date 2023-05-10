@@ -1,6 +1,8 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'preservim/nerdtree'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'davidhalter/jedi-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ap/vim-css-color'
@@ -73,6 +75,10 @@ set number
 set relativenumber
 let g:user_emmet_leader_key=','
 let g:powerline_loaded=0
+
+lua << END
+require('lualine').setup()
+END
 
 " Add `:Format` command to format current buffer
 command! -nargs=0 Format :call CocActionAsync('format')
