@@ -1,7 +1,5 @@
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'davidhalter/jedi-vim'
 Plug 'jiangmiao/auto-pairs'
@@ -71,12 +69,10 @@ set smarttab
 set autoindent
 set nowrap
 
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=1
 set number
 set relativenumber
 let g:user_emmet_leader_key=','
-let g:indentLine_enabled=0
+let g:powerline_loaded=0
 
 " Add `:Format` command to format current buffer
 command! -nargs=0 Format :call CocActionAsync('format')
