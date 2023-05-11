@@ -21,7 +21,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'ayu-theme/ayu-vim'
 
 Plug 'tpope/vim-fugitive'
-Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
