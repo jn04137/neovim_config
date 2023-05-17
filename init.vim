@@ -59,7 +59,9 @@ set encoding=UTF-8
 "inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 syntax on
-let g:gruvbox_contrast_dark="hard"
+"let g:gruvbox_contrast_dark="hard"
+"let ayucolor="light"
+set background=light
 colorscheme gruvbox
 
 set tabstop=2
