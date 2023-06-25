@@ -9,21 +9,13 @@ Plug 'ap/vim-css-color'
 Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
 Plug 'junegunn/fzf.vim'
 
-Plug 'kaicataldo/material.vim'
 Plug 'morhetz/gruvbox'
-Plug 'projekt0n/github-nvim-theme'
-Plug 'arcticicestudio/nord-vim'
-Plug 'tomasr/molokai'
-Plug 'lifepillar/vim-solarized8'
-Plug 'sainnhe/everforest'
-Plug 'joshdick/onedark.vim'
-Plug 'chriskempson/base16-vim'
-Plug 'ayu-theme/ayu-vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'lervag/vimtex'
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'pantharshit00/vim-prisma'
@@ -47,19 +39,7 @@ if (has("termguicolors"))
 endif
 set encoding=UTF-8
 
-" Use tab for trigger completion with characters ahead and navigate
-" NOTE: There's always complete item selected by default, you may want to enable
-" no select by `"suggest.noselect": true` in your configuration file
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config
-"inoremap <silent><expr> <TAB>
-"      \ coc#pum#visible() ? coc#pum#next(1) :
-"      \ CheckBackspace() ? "\<Tab>" :
-"      \ coc#refresh()
-"inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
 syntax on
-"let ayucolor="light"
 colorscheme gruvbox
 let g:gruvbox_contrast_dark="soft"
 
@@ -75,6 +55,20 @@ set number
 set relativenumber
 let g:user_emmet_leader_key=','
 let g:powerline_loaded=0
+
+" use <tab> to trigger completion and navigate to the next complete item
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 lua << END
 require('lualine').setup()
