@@ -56,7 +56,7 @@ vim.keymap.set('n', '<C-P>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
 vim.g.material_style = "darker"
-vim.cmd[[colorscheme tokyonight-night]]
+vim.cmd[[colorscheme gruvbox]]
 
 local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr) 
@@ -67,8 +67,12 @@ local cmp = require('cmp')
 
 cmp.setup({
   sources = {
-    { name = 'nvim_lsp_signature_help'}
-  }
+    { name = 'nvim_lsp_signature_help'},
+    { name = 'nvim_lsp'}
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<CR>'] = cmp.mapping.confirm({select = false}),
+  })
 })
 
 local lspconfig = require('lspconfig')

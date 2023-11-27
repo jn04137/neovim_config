@@ -43,6 +43,10 @@ return {
   }, {
     'nvim-treesitter/nvim-treesitter'
   }, {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
+  }, {
     'NeogitOrg/neogit',
     dependencies = {
       'nvim-lua/plenary.nvim',
