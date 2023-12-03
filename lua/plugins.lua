@@ -39,8 +39,6 @@ return {
   }, {
     'neovim/nvim-lspconfig'
   }, {
-    'nvim-tree/nvim-tree.lua'
-  }, {
     'nvim-treesitter/nvim-treesitter'
   }, {
     'windwp/nvim-autopairs',

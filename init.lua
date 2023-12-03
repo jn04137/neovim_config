@@ -13,8 +13,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Disables netrw, i.e. Exp, Hex
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+--vim.g.loaded_netrw = 1
+--vim.g.loaded_netrwPlugin = 1
 
 local let set = vim.opt
 set.shiftwidth = 2
@@ -38,8 +38,8 @@ require("lualine").setup({
   }}
 })
 
-require('nvim-tree').setup {}
-vim.keymap.set('n', '<C-N>', ':NvimTreeToggle<CR>', {noremap=true, silent=true})
+--require('nvim-tree').setup {}
+--vim.keymap.set('n', '<C-N>', ':NvimTreeToggle<CR>', {noremap=true, silent=true})
 
 require('nvim-treesitter.configs').setup {
     ensure_installed = {"lua", "vim", "javascript", "go", "svelte", "sql"}, -- install parsers for all supported languages
@@ -54,6 +54,8 @@ require('nvim-treesitter.configs').setup {
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-P>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+
+vim.keymap.set('n', '<C-N>', ":Exp<CR>", {noremap=true, silent=true})
 
 vim.g.material_style = "darker"
 vim.cmd[[colorscheme gruvbox]]
