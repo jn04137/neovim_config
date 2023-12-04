@@ -86,6 +86,6 @@ lspconfig.elixirls.setup {
 lspconfig.svelte.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.gopls.setup {}
+lspconfig.jdtls.setup {}
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-
