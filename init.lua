@@ -12,20 +12,19 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
--- Disables netrw, i.e. Exp, Hex
---vim.g.loaded_netrw = 1
---vim.g.loaded_netrwPlugin = 1
-
 local let set = vim.opt
 set.shiftwidth = 2
 set.tabstop = 2
-set.expandtab = true
-set.softtabstop = 2
+-- set.expandtab = true
 set.smarttab = true
 set.autoindent = true
+set.smarttab = true
 set.wrap = false
 set.number = true
 set.termguicolors = true
+
+--set.foldmethod="expr"
+--set.foldexpr="nvim_treesitter#foldexpr()"
 
 require("lazy").setup('plugins')
 require("lualine").setup({
@@ -37,9 +36,6 @@ require("lualine").setup({
     }
   }}
 })
-
---require('nvim-tree').setup {}
---vim.keymap.set('n', '<C-N>', ':NvimTreeToggle<CR>', {noremap=true, silent=true})
 
 require('nvim-treesitter.configs').setup {
     ensure_installed = {"lua", "vim", "javascript", "go", "svelte", "sql"}, -- install parsers for all supported languages
@@ -55,10 +51,7 @@ local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-P>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
-vim.keymap.set('n', '<C-N>', ":Exp<CR>", {noremap=true, silent=true})
-
-vim.g.material_style = "darker"
-vim.cmd[[colorscheme gruvbox]]
+vim.cmd[[colorscheme tokyonight-night]]
 
 local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr) 
@@ -73,12 +66,14 @@ cmp.setup({
     { name = 'nvim_lsp'}
   },
   mapping = cmp.mapping.preset.insert({
-    ['<CR>'] = cmp.mapping.confirm({select = false}),
+    ['<C-CR>'] = cmp.mapping.confirm({select = false}),
   })
 })
 
+require'nvim-treesitter.configs'.setup{}
 local lspconfig = require('lspconfig')
-lspconfig.tsserver.setup {}
+lspconfig.configs.setup{}
+lspconfig.tsserver.setup{}
 lspconfig.emmet_language_server.setup {}
 lspconfig.elixirls.setup {
   cmd = {"/Users/wthunder/elixir-ls/elixir_ls/language_server.sh"}
@@ -87,5 +82,33 @@ lspconfig.svelte.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.gopls.setup {}
 lspconfig.jdtls.setup {}
+lspconfig.pyright.setup {}
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+
+--local vim = vim
+--local api = vim.api
+--local M = {}
+-- function to create a list of commands and convert them to autocommands
+-------- This function is taken from https://github.com/norcalli/nvim_utils
+--function M.nvim_create_augroups(definitions)
+--    for group_name, definition in pairs(definitions) do
+--        api.nvim_command('augroup '..group_name)
+--        api.nvim_command('autocmd!')
+--        for _, def in ipairs(definition) do
+--            local command = table.concat(vim.tbl_flatten{'autocmd', def}, ' ')
+--            api.nvim_command(command)
+--        end
+--        api.nvim_command('augroup END')
+--    end
+--end
+
+
+--local autoCommands = {
+--    -- other autocommands
+--    open_folds = {
+--        {"BufReadPost,FileReadPost", "*", "normal zR"}
+--    }
+--}
+--
+--M.nvim_create_augroups(autoCommands)
