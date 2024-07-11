@@ -1,32 +1,10 @@
 return {
+	{
+		"williamboman/mason.nvim",
+	},
   {
     'nvim-telescope/telescope.nvim', tag='0.1.2',
     dependencies= {'nvim-lua/plenary.nvim'}
-  }, {
-    'nvim-orgmode/orgmode',
-    dependencies = {
-      { 'nvim-treesitter/nvim-treesitter', lazy = true },
-    },
-    event = 'VeryLazy',
-    config = function()
-      -- Load treesitter grammar for org
-      require('orgmode').setup_ts_grammar()
-
-      -- Setup treesitter
-      require('nvim-treesitter.configs').setup({
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = { 'org' },
-        },
-        ensure_installed = { 'org' },
-      })
-
-      -- Setup orgmode
-      require('orgmode').setup({
-        org_agenda_files = '~/orgfiles/**/*',
-        org_default_notes_file = '~/orgfiles/refile.org',
-      })
-    end,
   }, {
     "folke/tokyonight.nvim",
     lazy=false,
@@ -39,7 +17,7 @@ return {
   }, {
     'neovim/nvim-lspconfig'
   }, {
-    'nvim-treesitter/nvim-treesitter'
+    'nvim-treesitter/nvim-treesitter',
   }, {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
@@ -65,6 +43,21 @@ return {
   {"hrsh7th/cmp-nvim-lsp-signature-help"},
   {"yuezk/vim-js"},
   {"maxmellon/vim-jsx-pretty"},
-  {"altercation/vim-colors-solarized"}
+  {"altercation/vim-colors-solarized"},
+	{"joerdav/templ.vim"},
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	opts = function(_, opts)
+		opts.ignore_install = { 'help' }
+		if type(opts.ensure_installed) == 'table' then
+      vim.list_extend(opts.ensure_installed, {
+        'dockerfile',
+        'git_config',
+        'jsdoc',
+        'make',
+        'toml',
+        'vimdoc',
+      })
+		end
+	end,
   -- {"sheerun/vim-polyglot"}
 }

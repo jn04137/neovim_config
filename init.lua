@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -17,7 +18,7 @@ set.shiftwidth = 2
 set.tabstop = 2
 -- set.expandtab = true
 set.smarttab = true
-set.autoindent = true
+set.smartindent = true
 set.smarttab = true
 set.wrap = false
 set.number = true
@@ -70,19 +71,44 @@ cmp.setup({
   })
 })
 
+require('mason').setup{}
+
 require'nvim-treesitter.configs'.setup{}
 local lspconfig = require('lspconfig')
+local servers = { 'gopls', 'tsserver', 'templ', 'pyright'}
 lspconfig.configs.setup{}
-lspconfig.tsserver.setup{}
 lspconfig.emmet_language_server.setup {}
 lspconfig.elixirls.setup {
   cmd = {"/Users/wthunder/elixir-ls/elixir_ls/language_server.sh"}
 }
 lspconfig.svelte.setup {}
 lspconfig.lua_ls.setup {}
-lspconfig.gopls.setup {}
 lspconfig.jdtls.setup {}
-lspconfig.pyright.setup {}
+lspconfig.htmx.setup ({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = {"html", "templ"}
+})
+lspconfig.tailwindcss.setup ({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "templ", "astro", "javascript", "typescript", "react" },
+  init_options = { userLanguages = { templ = "html" } },
+})
+lspconfig.html.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetypes = { "html", "templ" }
+})
+lspconfig.ruby_ls.setup{}
+
+for _, lsp in ipairs(servers) do
+	lspconfig[lsp].setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+	})
+end
+vim.filetype.add({ extension = { templ = "templ" }})
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 
