@@ -100,7 +100,7 @@ lspconfig.html.setup({
 	capabilities = capabilities,
 	filetypes = { "html", "templ" }
 })
-lspconfig.ruby_ls.setup{}
+-- lspconfig.ruby_ls.setup{}
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
