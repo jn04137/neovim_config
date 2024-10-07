@@ -119,6 +119,10 @@ vim.filetype.add({ extension = { templ = "templ" }})
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 
+--vim.keymap.set('n' '<M><CR>', vim.lsp.buf.code_action())
+vim.keymap.set('n', '<space>.', function() vim.lsp.buf.code_action({apply=true}) end, bufopts)
+-- nnoremap <buffer> <M-CR> :lua vim.lsp.buf.code_action()<CR>
+
 --local vim = vim
 --local api = vim.api
 --local M = {}
