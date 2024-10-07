@@ -49,6 +49,13 @@ require('nvim-treesitter.configs').setup {
 }
 
 local builtin = require('telescope.builtin')
+require('telescope').setup{
+	defaults = {
+		file_ignore_patterns = {
+			"node_modules"
+		}
+	}
+}
 vim.keymap.set('n', '<C-P>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
