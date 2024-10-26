@@ -91,6 +91,11 @@ lspconfig.elixirls.setup {
 lspconfig.svelte.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.jdtls.setup {}
+local jdtlsConfig = {
+	cmd = {'/home/wthunder/.local/share/nvim/mason/packages/jdtls/bin/jdtls'},
+	root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
+}
+require('jdtls').start_or_attach(jdtlsConfig)
 lspconfig.htmx.setup ({
 	on_attach = on_attach,
 	capabilities = capabilities,
