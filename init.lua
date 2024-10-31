@@ -59,7 +59,7 @@ require('telescope').setup{
 vim.keymap.set('n', '<C-P>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
-vim.cmd[[colorscheme tokyonight-night]]
+vim.cmd[[colorscheme catppuccin-mocha]]
 
 local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr) 
