@@ -14,9 +14,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local let set = vim.opt
-set.shiftwidth = 2
-set.tabstop = 2
--- set.expandtab = true
+set.shiftwidth = 4
+set.tabstop = 4
+set.softtabstop = 4
+set.expandtab = true
 set.smarttab = true
 set.smartindent = true
 set.smarttab = true
@@ -53,6 +54,9 @@ require('telescope').setup{
 	defaults = {
 		file_ignore_patterns = {
 			"node_modules"
+		},
+		preview = {
+			hide_on_startup = true
 		}
 	}
 }
@@ -82,20 +86,14 @@ require('mason').setup{}
 
 require'nvim-treesitter.configs'.setup{}
 local lspconfig = require('lspconfig')
-local servers = { 'gopls', 'tsserver', 'templ', 'pyright'}
-lspconfig.configs.setup{}
+local servers = { 'gopls', 'ts_ls', 'templ', 'pyright'}
+-- lspconfig.configs.setup{}
 lspconfig.emmet_language_server.setup {}
 lspconfig.elixirls.setup {
   cmd = {"/Users/wthunder/elixir-ls/elixir_ls/language_server.sh"}
 }
 lspconfig.svelte.setup {}
 lspconfig.lua_ls.setup {}
-lspconfig.jdtls.setup {}
-local jdtlsConfig = {
-	cmd = {'/home/wthunder/.local/share/nvim/mason/packages/jdtls/bin/jdtls'},
-	root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])
-}
-require('jdtls').start_or_attach(jdtlsConfig)
 lspconfig.htmx.setup ({
 	on_attach = on_attach,
 	capabilities = capabilities,
